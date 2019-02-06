@@ -122,26 +122,6 @@ echo "##                         Done                              ##"
 echo "##                                                           ##"
 echo "###############################################################"
 
-##Plank optional##
-echo "###############################################################"
-echo "##                                                           ##"
-echo "##                        Plank                              ##"
-echo "##                                                           ##"
-echo "###############################################################"
-read -p "Do you want to install plank(y/n)? " -n 1 -r
-echo    # (optional) move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-    sudo apt install plank
-    sudo cp -r $(pwd)/gui/plank/Default /usr/share/plank/themes/
-    cp /usr/share/applications/plank.desktop ~/.config/autostart/plank.desktop
-fi
-echo "###############################################################"
-echo "##                                                           ##"
-echo "##                         Done                              ##"
-echo "##                                                           ##"
-echo "###############################################################"
-
 ##slingscold optional##
 
 echo "###############################################################"
@@ -165,6 +145,28 @@ echo "##                                                           ##"
 echo "##                         Done                              ##"
 echo "##                                                           ##"
 echo "###############################################################"
+
+##Plank optional##
+echo "###############################################################"
+echo "##                                                           ##"
+echo "##                        Plank                              ##"
+echo "##                                                           ##"
+echo "###############################################################"
+read -p "Do you want to install plank(y/n)? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt install plank
+    plank &
+    sleep 1
+    sudo cp -r $(pwd)/gui/plank/Default /usr/share/plank/themes/
+    cp /usr/share/applications/plank.desktop ~/.config/autostart/plank.desktop
+fi
+echo "###############################################################"
+echo "##                                                           ##"
+echo "##                         Done                              ##"
+echo "##                                                           ##"
+echo "###############################################################"
 echo "###############################################################"
 echo "##                                                           ##"
 echo "##                    Install complete                       ##"
@@ -175,3 +177,4 @@ echo "##                                                           ##"
 echo "##             Thank You... Reboot your system               ##"
 echo "##                                                           ##"
 echo "###############################################################"
+exit
