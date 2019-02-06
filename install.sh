@@ -134,8 +134,7 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo add-apt-repository ppa:noobslab/macbuntu -y
-    sudo apt install slingscold
-    cp $(pwd)/gui/plank/slingscold.dockitem ~/.config/plank/dock1/launchers/
+    sudo apt install slingscold -y
     sudo cp /usr/share/themes/ADOS-shell/gnome-shell/assets/startup.png /usr/share/icons/slingscold.png
     sudo add-apt-repository --remove ppa:noobslab/macbuntu -y
     sudo apt update
@@ -156,10 +155,11 @@ read -p "Do you want to install plank(y/n)? " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    sudo apt install plank
+    sudo apt install plank -y
     plank &
     sleep 1
     sudo cp -r $(pwd)/gui/plank/Default /usr/share/plank/themes/
+    cp $(pwd)/gui/plank/slingscold.dockitem ~/.config/plank/dock1/launchers/
     cp /usr/share/applications/plank.desktop ~/.config/autostart/plank.desktop
 fi
 echo "###############################################################"
