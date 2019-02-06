@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Advance Os Logo
+Description=Plymouth thats look at you
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/advance-os-logo
+ScriptFile=/usr/share/plymouth/themes/advance-os-logo/advance-os-logo.script
